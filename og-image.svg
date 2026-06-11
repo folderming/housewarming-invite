@@ -2,14 +2,14 @@
   <rect width="800" height="800" fill="#ffffff"/>
 
   <!-- 연두 구름 -->
-  <path d="M90 200 Q58 200 66 172 Q50 148 80 140 Q84 108 122 118 Q142 92 170 110 Q206 100 210 136 Q242 144 230 176 Q242 200 206 200 Z" fill="#dcf1b4" stroke="#1a1a1a" stroke-width="2.5"/>
-  <path d="M640 130 Q608 130 616 102 Q600 78 630 70 Q634 38 672 48 Q692 22 720 40 Q756 30 760 66 Q792 74 780 106 Q792 130 756 130 Z" fill="#dcf1b4" stroke="#1a1a1a" stroke-width="2.5"/>
-  <path d="M620 480 Q588 480 596 452 Q580 428 610 420 Q614 388 652 398 Q672 372 700 390 Q736 380 740 416 Q772 424 760 456 Q772 480 736 480 Z" fill="#dcf1b4" stroke="#1a1a1a" stroke-width="2.5"/>
-  <path d="M110 500 Q78 500 86 472 Q70 448 100 440 Q104 408 142 418 Q162 392 190 410 Q226 400 230 436 Q262 444 250 476 Q262 500 226 500 Z" fill="#dcf1b4" stroke="#1a1a1a" stroke-width="2.5"/>
+  <path d="M90 200 Q58 200 66 172 Q50 148 80 140 Q84 108 122 118 Q142 92 170 110 Q206 100 210 136 Q242 144 230 176 Q242 200 206 200 Z" fill="#dcf1b4" stroke="#1a1a1a" stroke-width="1.4"/>
+  <path d="M640 130 Q608 130 616 102 Q600 78 630 70 Q634 38 672 48 Q692 22 720 40 Q756 30 760 66 Q792 74 780 106 Q792 130 756 130 Z" fill="#dcf1b4" stroke="#1a1a1a" stroke-width="1.4"/>
+  <path d="M620 480 Q588 480 596 452 Q580 428 610 420 Q614 388 652 398 Q672 372 700 390 Q736 380 740 416 Q772 424 760 456 Q772 480 736 480 Z" fill="#dcf1b4" stroke="#1a1a1a" stroke-width="1.4"/>
+  <path d="M110 500 Q78 500 86 472 Q70 448 100 440 Q104 408 142 418 Q162 392 190 410 Q226 400 230 436 Q262 444 250 476 Q262 500 226 500 Z" fill="#dcf1b4" stroke="#1a1a1a" stroke-width="1.4"/>
 
   <!-- 풍선 다발 + 집 -->
   <g transform="translate(202,40) scale(1.0)">
-    <g stroke="#1a1a1a" stroke-width="1.3" fill="none">
+    <g stroke="#1a1a1a" stroke-width="1" fill="none">
       <path d="M150 80 Q170 132 198 178"/>
       <path d="M185 58 Q190 122 198 178"/>
       <path d="M221 72 Q212 130 198 178"/>
@@ -18,7 +18,7 @@
       <path d="M236 119 Q218 152 198 178"/>
       <path d="M201 98 Q200 142 198 178"/>
     </g>
-    <g stroke="#1a1a1a" stroke-width="1.8">
+    <g stroke="#1a1a1a" stroke-width="1.3">
       <ellipse cx="201" cy="76" rx="13" ry="17" fill="#ffa94d"/>
       <ellipse cx="150" cy="58" rx="13" ry="17" fill="#f2615c"/>
       <ellipse cx="185" cy="36" rx="13" ry="17" fill="#ffd166"/>
@@ -28,18 +28,18 @@
       <ellipse cx="236" cy="98" rx="12" ry="16" fill="#b58fe0"/>
     </g>
     <path d="M58 272 L196 176 L340 216 L312 252 L236 274 L72 286 Z" fill="#1a1a1a"/>
-    <path d="M80 282 L232 272 L240 452 L92 470 Z" fill="#ffffff" stroke="#1a1a1a" stroke-width="2.4"/>
-    <path d="M232 272 L310 250 L316 408 L240 452 Z" fill="#ffffff" stroke="#1a1a1a" stroke-width="2.4"/>
+    <path d="M80 282 L232 272 L240 452 L92 470 Z" fill="#ffffff" stroke="#1a1a1a" stroke-width="1.4"/>
+    <path d="M232 272 L310 250 L316 408 L240 452 Z" fill="#ffffff" stroke="#1a1a1a" stroke-width="1.4"/>
     <path d="M88 466 L240 448 L316 404 L323 423 L245 472 Q168 488 93 484 Z" fill="#1a1a1a"/>
-    <path d="M122 322 L188 314 L193 384 L128 393 Z" fill="#f9b9cb" stroke="#1a1a1a" stroke-width="2.4"/>
-    <line x1="155" y1="318" x2="160" y2="389" stroke="#1a1a1a" stroke-width="2"/>
-    <line x1="125" y1="356" x2="190" y2="348" stroke="#1a1a1a" stroke-width="2"/>
-    <circle cx="262" cy="306" r="8.5" fill="#fff" stroke="#1a1a1a" stroke-width="2.2"/>
+    <path d="M122 322 L188 314 L193 384 L128 393 Z" fill="#f9b9cb" stroke="#1a1a1a" stroke-width="1.4"/>
+    <line x1="155" y1="318" x2="160" y2="389" stroke="#1a1a1a" stroke-width="1.2"/>
+    <line x1="125" y1="356" x2="190" y2="348" stroke="#1a1a1a" stroke-width="1.2"/>
+    <circle cx="262" cy="306" r="8.5" fill="#fff" stroke="#1a1a1a" stroke-width="1.3"/>
     <circle cx="262" cy="306" r="2.8" fill="#1a1a1a"/>
-    <circle cx="293" cy="297" r="8.5" fill="#fff" stroke="#1a1a1a" stroke-width="2.2"/>
+    <circle cx="293" cy="297" r="8.5" fill="#fff" stroke="#1a1a1a" stroke-width="1.3"/>
     <circle cx="293" cy="297" r="2.8" fill="#1a1a1a"/>
-    <ellipse cx="277" cy="324" rx="6" ry="7" fill="#e8503a" stroke="#1a1a1a" stroke-width="1.6"/>
-    <path d="M268 341 Q278 350 289 338" fill="none" stroke="#1a1a1a" stroke-width="2.2" stroke-linecap="round"/>
+    <ellipse cx="277" cy="324" rx="6" ry="7" fill="#e8503a" stroke="#1a1a1a" stroke-width="1.1"/>
+    <path d="M268 341 Q278 350 289 338" fill="none" stroke="#1a1a1a" stroke-width="1.3" stroke-linecap="round"/>
   </g>
 
   <!-- 텍스트 -->

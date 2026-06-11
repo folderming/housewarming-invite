@@ -144,6 +144,11 @@
     will-change: transform;
   }
   .cloud svg { width: 100%; height: auto; display: block; }
+
+  .cloud svg, .house-wrap svg, .doodle svg, .mini-house svg {
+    filter: url(#wobble);
+    overflow: visible;
+  }
   .cloud-1 { top: 6%;  left: -28px; width: 130px; }
   .cloud-2 { top: 16%; right: -34px; width: 105px; }
   .cloud-3 { bottom: 4%; left: 8%; width: 150px; }
@@ -221,19 +226,17 @@
     gap: 8px;
     margin-top: 26px;
     padding: 13px 30px;
-    border: 1.5px solid var(--ink);
-    border-radius: 999px;
+    border: 1px solid var(--ink);
+    border-radius: 28px 24px 30px 22px / 24px 30px 22px 28px;
     background: #fff;
     color: var(--ink);
     font-family: 'Gowun Dodum', sans-serif;
     font-size: 15.5px;
     text-decoration: none;
-    box-shadow: 2px 2px 0 var(--ink);
-    transition: transform 0.15s ease, box-shadow 0.15s ease;
+    transition: transform 0.15s ease;
   }
   .map-btn:active {
-    transform: translate(2px, 2px);
-    box-shadow: 1px 1px 0 var(--ink);
+    transform: translate(1px, 1px);
   }
   .map-btn .pin { color: #2db400; font-weight: 700; }
 
@@ -241,8 +244,8 @@
     display: inline-block;
     margin-top: 4px;
     padding: 22px 28px;
-    border: 1.5px solid var(--ink);
-    border-radius: 18px;
+    border: 1px solid var(--ink);
+    border-radius: 26px 18px 28px 16px / 18px 28px 16px 26px;
     background: #fffbe9;
     font-size: 16px;
     line-height: 1.9;
@@ -264,8 +267,8 @@
   }
   .guest {
     padding: 9px 20px;
-    border: 1.5px solid var(--ink);
-    border-radius: 999px;
+    border: 1px solid var(--ink);
+    border-radius: 20px 16px 22px 15px / 16px 22px 15px 20px;
     font-size: 15.5px;
     background: #fff;
   }
@@ -288,21 +291,31 @@
 </head>
 <body>
 
+<!-- 손그림 꾸불거림 필터 -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <filter id="wobble">
+      <feTurbulence type="fractalNoise" baseFrequency="0.022" numOctaves="2" seed="7" result="n"/>
+      <feDisplacementMap in="SourceGraphic" in2="n" scale="3.5"/>
+    </filter>
+  </defs>
+</svg>
+
 <!-- ================= HERO ================= -->
 <section class="hero">
   <div class="welcome reveal on">WELCOME!</div>
 
   <div class="stage">
-    <div class="cloud cloud-1 drift"   data-speed="0.22"><svg viewBox="0 0 100 64" xmlns="http://www.w3.org/2000/svg"><path d="M20 56 Q4 56 8 42 Q0 30 15 26 Q17 10 36 15 Q46 2 60 11 Q78 6 80 24 Q96 28 90 44 Q96 56 78 56 Z" fill="#dcf1b4" stroke="#1a1a1a" stroke-width="2"/></svg></div>
-    <div class="cloud cloud-2 drift-r" data-speed="0.34"><svg viewBox="0 0 100 64" xmlns="http://www.w3.org/2000/svg"><path d="M20 56 Q4 56 8 42 Q0 30 15 26 Q17 10 36 15 Q46 2 60 11 Q78 6 80 24 Q96 28 90 44 Q96 56 78 56 Z" fill="#dcf1b4" stroke="#1a1a1a" stroke-width="2"/></svg></div>
-    <div class="cloud cloud-3 drift-r" data-speed="0.16"><svg viewBox="0 0 100 64" xmlns="http://www.w3.org/2000/svg"><path d="M20 56 Q4 56 8 42 Q0 30 15 26 Q17 10 36 15 Q46 2 60 11 Q78 6 80 24 Q96 28 90 44 Q96 56 78 56 Z" fill="#dcf1b4" stroke="#1a1a1a" stroke-width="2"/></svg></div>
-    <div class="cloud cloud-4 drift"   data-speed="0.28"><svg viewBox="0 0 100 64" xmlns="http://www.w3.org/2000/svg"><path d="M20 56 Q4 56 8 42 Q0 30 15 26 Q17 10 36 15 Q46 2 60 11 Q78 6 80 24 Q96 28 90 44 Q96 56 78 56 Z" fill="#dcf1b4" stroke="#1a1a1a" stroke-width="2"/></svg></div>
+    <div class="cloud cloud-1 drift"   data-speed="0.22"><svg viewBox="0 0 100 64" xmlns="http://www.w3.org/2000/svg"><path d="M20 56 Q4 56 8 42 Q0 30 15 26 Q17 10 36 15 Q46 2 60 11 Q78 6 80 24 Q96 28 90 44 Q96 56 78 56 Z" fill="#dcf1b4" stroke="#1a1a1a" stroke-width="1.2"/></svg></div>
+    <div class="cloud cloud-2 drift-r" data-speed="0.34"><svg viewBox="0 0 100 64" xmlns="http://www.w3.org/2000/svg"><path d="M20 56 Q4 56 8 42 Q0 30 15 26 Q17 10 36 15 Q46 2 60 11 Q78 6 80 24 Q96 28 90 44 Q96 56 78 56 Z" fill="#dcf1b4" stroke="#1a1a1a" stroke-width="1.2"/></svg></div>
+    <div class="cloud cloud-3 drift-r" data-speed="0.16"><svg viewBox="0 0 100 64" xmlns="http://www.w3.org/2000/svg"><path d="M20 56 Q4 56 8 42 Q0 30 15 26 Q17 10 36 15 Q46 2 60 11 Q78 6 80 24 Q96 28 90 44 Q96 56 78 56 Z" fill="#dcf1b4" stroke="#1a1a1a" stroke-width="1.2"/></svg></div>
+    <div class="cloud cloud-4 drift"   data-speed="0.28"><svg viewBox="0 0 100 64" xmlns="http://www.w3.org/2000/svg"><path d="M20 56 Q4 56 8 42 Q0 30 15 26 Q17 10 36 15 Q46 2 60 11 Q78 6 80 24 Q96 28 90 44 Q96 56 78 56 Z" fill="#dcf1b4" stroke="#1a1a1a" stroke-width="1.2"/></svg></div>
 
     <div class="house-wrap" id="houseWrap">
       <svg viewBox="0 0 400 520" xmlns="http://www.w3.org/2000/svg">
         <!-- 풍선 다발 (UP 스타일) -->
         <g class="balloon">
-          <g stroke="#1a1a1a" stroke-width="1.1" fill="none">
+          <g stroke="#1a1a1a" stroke-width="0.9" fill="none">
             <path d="M150 80 Q170 132 198 178"/>
             <path d="M185 58 Q190 122 198 178"/>
             <path d="M221 72 Q212 130 198 178"/>
@@ -311,7 +324,7 @@
             <path d="M236 119 Q218 152 198 178"/>
             <path d="M201 98 Q200 142 198 178"/>
           </g>
-          <g stroke="#1a1a1a" stroke-width="1.5">
+          <g stroke="#1a1a1a" stroke-width="1.1">
             <ellipse cx="201" cy="76" rx="13" ry="17" fill="#ffa94d"/>
             <path d="M197 92 L201 98 L205 92 Z" fill="#ffa94d"/>
             <ellipse cx="150" cy="58" rx="13" ry="17" fill="#f2615c"/>
@@ -331,24 +344,24 @@
         <!-- 집 -->
         <g>
           <!-- 지붕 -->
-          <path d="M58 272 L196 176 L340 216 L312 252 L236 274 L72 286 Z" fill="#1a1a1a" stroke="#1a1a1a" stroke-width="1.5"/>
+          <path d="M58 272 L196 176 L340 216 L312 252 L236 274 L72 286 Z" fill="#1a1a1a" stroke="#1a1a1a" stroke-width="1"/>
           <!-- 왼쪽 면 -->
-          <path d="M80 282 L232 272 L240 452 L92 470 Z" fill="#ffffff" stroke="#1a1a1a" stroke-width="2"/>
+          <path d="M80 282 L232 272 L240 452 L92 470 Z" fill="#ffffff" stroke="#1a1a1a" stroke-width="1.2"/>
           <!-- 오른쪽 면 -->
-          <path d="M232 272 L310 250 L316 408 L240 452 Z" fill="#ffffff" stroke="#1a1a1a" stroke-width="2"/>
+          <path d="M232 272 L310 250 L316 408 L240 452 Z" fill="#ffffff" stroke="#1a1a1a" stroke-width="1.2"/>
           <!-- 바닥 그림자 -->
           <path d="M88 466 L240 448 L316 404 L323 423 L245 472 Q168 488 93 484 Z" fill="#1a1a1a"/>
           <!-- 분홍 창문 -->
-          <path d="M122 322 L188 314 L193 384 L128 393 Z" fill="#f9b9cb" stroke="#1a1a1a" stroke-width="2"/>
-          <line x1="155" y1="318" x2="160" y2="389" stroke="#1a1a1a" stroke-width="1.6"/>
-          <line x1="125" y1="356" x2="190" y2="348" stroke="#1a1a1a" stroke-width="1.6"/>
+          <path d="M122 322 L188 314 L193 384 L128 393 Z" fill="#f9b9cb" stroke="#1a1a1a" stroke-width="1.2"/>
+          <line x1="155" y1="318" x2="160" y2="389" stroke="#1a1a1a" stroke-width="1"/>
+          <line x1="125" y1="356" x2="190" y2="348" stroke="#1a1a1a" stroke-width="1"/>
           <!-- 얼굴 -->
-          <circle cx="262" cy="306" r="8.5" fill="#fff" stroke="#1a1a1a" stroke-width="1.8"/>
+          <circle cx="262" cy="306" r="8.5" fill="#fff" stroke="#1a1a1a" stroke-width="1.1"/>
           <circle cx="262" cy="306" r="2.8" fill="#1a1a1a"/>
-          <circle cx="293" cy="297" r="8.5" fill="#fff" stroke="#1a1a1a" stroke-width="1.8"/>
+          <circle cx="293" cy="297" r="8.5" fill="#fff" stroke="#1a1a1a" stroke-width="1.1"/>
           <circle cx="293" cy="297" r="2.8" fill="#1a1a1a"/>
-          <ellipse cx="277" cy="324" rx="6" ry="7" fill="#e8503a" stroke="#1a1a1a" stroke-width="1.3"/>
-          <path d="M268 341 Q278 350 289 338" fill="none" stroke="#1a1a1a" stroke-width="1.8" stroke-linecap="round"/>
+          <ellipse cx="277" cy="324" rx="6" ry="7" fill="#e8503a" stroke="#1a1a1a" stroke-width="1"/>
+          <path d="M268 341 Q278 350 289 338" fill="none" stroke="#1a1a1a" stroke-width="1.1" stroke-linecap="round"/>
         </g>
       </svg>
     </div>
@@ -379,12 +392,12 @@
 
 <div class="doodle reveal">
   <svg viewBox="0 0 60 50" xmlns="http://www.w3.org/2000/svg" style="width:44px">
-    <line x1="14" y1="24" x2="20" y2="46" stroke="#1a1a1a" stroke-width="1.1"/>
-    <line x1="30" y1="28" x2="29" y2="46" stroke="#1a1a1a" stroke-width="1.1"/>
-    <line x1="45" y1="24" x2="38" y2="46" stroke="#1a1a1a" stroke-width="1.1"/>
-    <ellipse cx="14" cy="14" rx="8" ry="10" fill="#56b7e6" stroke="#1a1a1a" stroke-width="1.4"/>
-    <ellipse cx="31" cy="17" rx="8" ry="10" fill="#ffd166" stroke="#1a1a1a" stroke-width="1.4"/>
-    <ellipse cx="46" cy="13" rx="8" ry="10" fill="#f2615c" stroke="#1a1a1a" stroke-width="1.4"/>
+    <line x1="14" y1="24" x2="20" y2="46" stroke="#1a1a1a" stroke-width="0.9"/>
+    <line x1="30" y1="28" x2="29" y2="46" stroke="#1a1a1a" stroke-width="0.9"/>
+    <line x1="45" y1="24" x2="38" y2="46" stroke="#1a1a1a" stroke-width="0.9"/>
+    <ellipse cx="14" cy="14" rx="8" ry="10" fill="#56b7e6" stroke="#1a1a1a" stroke-width="1"/>
+    <ellipse cx="31" cy="17" rx="8" ry="10" fill="#ffd166" stroke="#1a1a1a" stroke-width="1"/>
+    <ellipse cx="46" cy="13" rx="8" ry="10" fill="#f2615c" stroke="#1a1a1a" stroke-width="1"/>
   </svg>
 </div>
 
@@ -413,7 +426,7 @@
 
 <div class="doodle reveal">
   <svg viewBox="0 0 100 64" xmlns="http://www.w3.org/2000/svg" style="width:46px">
-    <path d="M20 56 Q4 56 8 42 Q0 30 15 26 Q17 10 36 15 Q46 2 60 11 Q78 6 80 24 Q96 28 90 44 Q96 56 78 56 Z" fill="#dcf1b4" stroke="#1a1a1a" stroke-width="2"/>
+    <path d="M20 56 Q4 56 8 42 Q0 30 15 26 Q17 10 36 15 Q46 2 60 11 Q78 6 80 24 Q96 28 90 44 Q96 56 78 56 Z" fill="#dcf1b4" stroke="#1a1a1a" stroke-width="1.2"/>
   </svg>
 </div>
 
@@ -432,8 +445,8 @@
 
 <div class="doodle reveal">
   <svg viewBox="0 0 34 46" xmlns="http://www.w3.org/2000/svg">
-    <line x1="17" y1="26" x2="18" y2="44" stroke="#1a1a1a" stroke-width="1.1"/>
-    <ellipse cx="17" cy="15" rx="9" ry="12" fill="#f7a8c4" stroke="#1a1a1a" stroke-width="1.4"/>
+    <line x1="17" y1="26" x2="18" y2="44" stroke="#1a1a1a" stroke-width="0.9"/>
+    <ellipse cx="17" cy="15" rx="9" ry="12" fill="#f7a8c4" stroke="#1a1a1a" stroke-width="1"/>
   </svg>
 </div>
 
@@ -469,8 +482,8 @@
   <div class="mini-house">
     <svg viewBox="0 0 60 56" xmlns="http://www.w3.org/2000/svg">
       <path d="M8 24 L30 8 L52 24 L46 26 L14 26 Z" fill="#1a1a1a"/>
-      <rect x="14" y="26" width="32" height="24" fill="#fff" stroke="#1a1a1a" stroke-width="1.5"/>
-      <rect x="22" y="32" width="12" height="11" fill="#f9b9cb" stroke="#1a1a1a" stroke-width="1.2"/>
+      <rect x="14" y="26" width="32" height="24" fill="#fff" stroke="#1a1a1a" stroke-width="1"/>
+      <rect x="22" y="32" width="12" height="11" fill="#f9b9cb" stroke="#1a1a1a" stroke-width="0.9"/>
     </svg>
   </div>
   SEE YOU SOON 🤍
