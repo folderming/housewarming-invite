@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>밍뇽옹의 홈스윗홈 · 집들이 초대장</title>
+
+<!-- 카카오톡 링크 공유 미리보기 (호스팅 후 og:image / og:url 주소만 채우면 됩니다) -->
+<meta property="og:title" content="밍뇽옹의 홈스윗홈 🏠 집들이 초대장" />
+<meta property="og:description" content="이제 정리가 되어 초대합니다 · 2026.06.14 SAT 12:00PM" />
+<meta property="og:type" content="website" />
+<!-- <meta property="og:url" content="https://여기에-배포된-주소" /> -->
+<!-- <meta property="og:image" content="https://여기에-미리보기-이미지-주소" /> -->
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Gaegu:wght@400;700&family=Gowun+Dodum&display=swap" rel="stylesheet" />
+
+<style>
+  :root {
+    --ink: #1a1a1a;
+    --teal: #3fb8c8;
+    --pink: #f9d3da;
+    --blue: #56b7e6;
+    --yellow: #f5c518;
+    --red: #e8503a;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Gowun Dodum', sans-serif;
+    color: var(--ink);
+    background: #fff;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .wrap {
+    max-width: 430px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  /* ---------- 공통 섹션 ---------- */
+  section { padding: 88px 0; text-align: center; }
+
+  .label {
+    font-family: 'Courier New', monospace;
+    font-weight: 700;
+    letter-spacing: 0.45em;
+    text-indent: 0.45em;
+    color: var(--teal);
+    font-size: 15px;
+    margin-bottom: 36px;
+  }
+
+  .body-text {
+    font-size: 16.5px;
+    line-height: 2.3;
+    word-break: keep-all;
+  }
+
+  .sub-label {
+    font-family: 'Courier New', monospace;
+    font-weight: 700;
+    letter-spacing: 0.3em;
+    text-indent: 0.3em;
+    font-size: 13px;
+    color: #9a9a9a;
+    margin: 0 0 14px;
+  }
+  .reveal + .reveal .sub-label { margin-top: 44px; }
+
+  .menu-item { font-size: 17.5px; line-height: 1.9; word-break: keep-all; }
+  .menu-note { font-size: 13.5px; color: #8a8a8a; margin-top: 6px; }
+
+  /* ---------- 스크롤 리빌 ---------- */
+  .reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.9s ease, transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  .reveal.on { opacity: 1; transform: none; }
+
+  /* ---------- 히어로 ---------- */
+  .hero {
+    min-height: 100svh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    padding: 70px 0 60px;
+    overflow: hidden;
+  }
+
+  .hero .welcome {
+    font-family: 'Courier New', monospace;
+    font-weight: 700;
+    font-size: 21px;
+    letter-spacing: 0.5em;
+    text-indent: 0.5em;
+    color: var(--ink);
+    margin-bottom: 8px;
+    z-index: 2;
+  }
+
+  .stage {
+    position: relative;
+    width: 100%;
+    max-width: 400px;
+    z-index: 1;
+  }
+
+  .house-wrap {
+    width: 78%;
+    margin: 0 auto;
+    animation: floaty 6s ease-in-out infinite;
+    will-change: transform;
+  }
+  .house-wrap svg { width: 100%; height: auto; display: block; }
+
+  @keyframes floaty {
+    0%, 100% { transform: translateY(0) rotate(-0.6deg); }
+    50%      { transform: translateY(-14px) rotate(0.8deg); }
+  }
+
+  .balloon {
+    transform-origin: 198px 180px;
+    animation: sway 4.5s ease-in-out infinite;
+  }
+  @keyframes sway {
+    0%, 100% { transform: rotate(-4deg); }
+    50%      { transform: rotate(4deg); }
+  }
+
+  /* 구름 */
+  .cloud {
+    position: absolute;
+    width: 110px;
+    will-change: transform;
+  }
+  .cloud svg { width: 100%; height: auto; display: block; }
+  .cloud-1 { top: 6%;  left: -28px; width: 130px; }
+  .cloud-2 { top: 16%; right: -34px; width: 105px; }
+  .cloud-3 { bottom: 4%; left: 8%; width: 150px; }
+  .cloud-4 { bottom: 16%; right: -20px; width: 95px; }
+
+  .drift   { animation: drift 9s ease-in-out infinite; }
+  .drift-r { animation: drift 11s ease-in-out infinite reverse; }
+  @keyframes drift {
+    0%, 100% { transform: translateX(0); }
+    50%      { transform: translateX(16px); }
+  }
+
+  .hero-title {
+    margin-top: 36px;
+    z-index: 2;
+  }
+  .hero-title h1 {
+    font-family: 'Gaegu', cursive;
+    font-weight: 700;
+    font-size: 36px;
+    letter-spacing: 0.02em;
+  }
+  .hero-title p {
+    font-size: 16px;
+    margin-top: 10px;
+    color: #555;
+  }
+  .hero-date {
+    font-family: 'Courier New', monospace;
+    font-weight: 700;
+    font-size: 15px;
+    letter-spacing: 0.12em;
+    margin-top: 26px;
+    color: var(--ink);
+  }
+
+  .scroll-hint {
+    position: absolute;
+    bottom: 22px;
+    left: 50%;
+    margin-left: -9px;
+    color: #bbb;
+    font-size: 18px;
+    animation: bob 1.6s ease-in-out infinite;
+  }
+  @keyframes bob {
+    0%, 100% { transform: translateY(0); opacity: 0.55; }
+    50%      { transform: translateY(7px); opacity: 1; }
+  }
+
+  /* ---------- 구분 낙서 ---------- */
+  .doodle {
+    display: flex;
+    justify-content: center;
+    padding: 4px 0;
+  }
+  .doodle svg {
+    width: 30px;
+    height: auto;
+    animation: bob 2.4s ease-in-out infinite;
+  }
+
+  /* ---------- 위치 ---------- */
+  .place-name {
+    font-family: 'Gaegu', cursive;
+    font-weight: 700;
+    font-size: 26px;
+    margin-bottom: 12px;
+  }
+  .addr { font-size: 15.5px; color: #555; line-height: 1.9; }
+
+  .map-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 26px;
+    padding: 13px 30px;
+    border: 1.5px solid var(--ink);
+    border-radius: 999px;
+    background: #fff;
+    color: var(--ink);
+    font-family: 'Gowun Dodum', sans-serif;
+    font-size: 15.5px;
+    text-decoration: none;
+    box-shadow: 2px 2px 0 var(--ink);
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+  }
+  .map-btn:active {
+    transform: translate(2px, 2px);
+    box-shadow: 1px 1px 0 var(--ink);
+  }
+  .map-btn .pin { color: #2db400; font-weight: 700; }
+
+  .pickup-box {
+    display: inline-block;
+    margin-top: 4px;
+    padding: 22px 28px;
+    border: 1.5px solid var(--ink);
+    border-radius: 18px;
+    background: #fffbe9;
+    font-size: 16px;
+    line-height: 1.9;
+    word-break: keep-all;
+  }
+  .pickup-time {
+    font-family: 'Courier New', monospace;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    margin-top: 4px;
+  }
+
+  /* ---------- 참석자 ---------- */
+  .guest-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+  }
+  .guest {
+    padding: 9px 20px;
+    border: 1.5px solid var(--ink);
+    border-radius: 999px;
+    font-size: 15.5px;
+    background: #fff;
+  }
+  .guest:nth-child(1) { background: var(--pink); }
+  .guest:nth-child(2) { background: #dff1fb; }
+  .guest:nth-child(3) { background: #fff3c4; }
+  .guest:nth-child(4) { background: #e8f7e4; }
+
+  /* ---------- 푸터 ---------- */
+  footer {
+    padding: 60px 0 80px;
+    text-align: center;
+    color: #b5b5b5;
+    font-size: 13px;
+    letter-spacing: 0.06em;
+  }
+  footer .mini-house { width: 44px; margin: 0 auto 18px; }
+  footer .mini-house svg { width: 100%; height: auto; }
+</style>
+</head>
+<body>
+
+<!-- ================= HERO ================= -->
+<section class="hero">
+  <div class="welcome reveal on">WELCOME!</div>
+
+  <div class="stage">
+    <div class="cloud cloud-1 drift"   data-speed="0.22"><svg viewBox="0 0 100 64" xmlns="http://www.w3.org/2000/svg"><path d="M20 56 Q4 56 8 42 Q0 30 15 26 Q17 10 36 15 Q46 2 60 11 Q78 6 80 24 Q96 28 90 44 Q96 56 78 56 Z" fill="#dcf1b4" stroke="#1a1a1a" stroke-width="2"/></svg></div>
+    <div class="cloud cloud-2 drift-r" data-speed="0.34"><svg viewBox="0 0 100 64" xmlns="http://www.w3.org/2000/svg"><path d="M20 56 Q4 56 8 42 Q0 30 15 26 Q17 10 36 15 Q46 2 60 11 Q78 6 80 24 Q96 28 90 44 Q96 56 78 56 Z" fill="#dcf1b4" stroke="#1a1a1a" stroke-width="2"/></svg></div>
+    <div class="cloud cloud-3 drift-r" data-speed="0.16"><svg viewBox="0 0 100 64" xmlns="http://www.w3.org/2000/svg"><path d="M20 56 Q4 56 8 42 Q0 30 15 26 Q17 10 36 15 Q46 2 60 11 Q78 6 80 24 Q96 28 90 44 Q96 56 78 56 Z" fill="#dcf1b4" stroke="#1a1a1a" stroke-width="2"/></svg></div>
+    <div class="cloud cloud-4 drift"   data-speed="0.28"><svg viewBox="0 0 100 64" xmlns="http://www.w3.org/2000/svg"><path d="M20 56 Q4 56 8 42 Q0 30 15 26 Q17 10 36 15 Q46 2 60 11 Q78 6 80 24 Q96 28 90 44 Q96 56 78 56 Z" fill="#dcf1b4" stroke="#1a1a1a" stroke-width="2"/></svg></div>
+
+    <div class="house-wrap" id="houseWrap">
+      <svg viewBox="0 0 400 520" xmlns="http://www.w3.org/2000/svg">
+        <!-- 풍선 다발 (UP 스타일) -->
+        <g class="balloon">
+          <g stroke="#1a1a1a" stroke-width="1.1" fill="none">
+            <path d="M150 80 Q170 132 198 178"/>
+            <path d="M185 58 Q190 122 198 178"/>
+            <path d="M221 72 Q212 130 198 178"/>
+            <path d="M252 91 Q228 140 198 178"/>
+            <path d="M166 113 Q180 148 198 178"/>
+            <path d="M236 119 Q218 152 198 178"/>
+            <path d="M201 98 Q200 142 198 178"/>
+          </g>
+          <g stroke="#1a1a1a" stroke-width="1.5">
+            <ellipse cx="201" cy="76" rx="13" ry="17" fill="#ffa94d"/>
+            <path d="M197 92 L201 98 L205 92 Z" fill="#ffa94d"/>
+            <ellipse cx="150" cy="58" rx="13" ry="17" fill="#f2615c"/>
+            <path d="M146 74 L150 80 L154 74 Z" fill="#f2615c"/>
+            <ellipse cx="185" cy="36" rx="13" ry="17" fill="#ffd166"/>
+            <path d="M181 52 L185 58 L189 52 Z" fill="#ffd166"/>
+            <ellipse cx="221" cy="50" rx="13" ry="17" fill="#56b7e6"/>
+            <path d="M217 66 L221 72 L225 66 Z" fill="#56b7e6"/>
+            <ellipse cx="252" cy="70" rx="12" ry="16" fill="#9bd770"/>
+            <path d="M248 85 L252 91 L256 85 Z" fill="#9bd770"/>
+            <ellipse cx="166" cy="92" rx="12" ry="16" fill="#f7a8c4"/>
+            <path d="M162 107 L166 113 L170 107 Z" fill="#f7a8c4"/>
+            <ellipse cx="236" cy="98" rx="12" ry="16" fill="#b58fe0"/>
+            <path d="M232 113 L236 119 L240 113 Z" fill="#b58fe0"/>
+          </g>
+        </g>
+        <!-- 집 -->
+        <g>
+          <!-- 지붕 -->
+          <path d="M58 272 L196 176 L340 216 L312 252 L236 274 L72 286 Z" fill="#1a1a1a" stroke="#1a1a1a" stroke-width="1.5"/>
+          <!-- 왼쪽 면 -->
+          <path d="M80 282 L232 272 L240 452 L92 470 Z" fill="#ffffff" stroke="#1a1a1a" stroke-width="2"/>
+          <!-- 오른쪽 면 -->
+          <path d="M232 272 L310 250 L316 408 L240 452 Z" fill="#ffffff" stroke="#1a1a1a" stroke-width="2"/>
+          <!-- 바닥 그림자 -->
+          <path d="M88 466 L240 448 L316 404 L323 423 L245 472 Q168 488 93 484 Z" fill="#1a1a1a"/>
+          <!-- 분홍 창문 -->
+          <path d="M122 322 L188 314 L193 384 L128 393 Z" fill="#f9b9cb" stroke="#1a1a1a" stroke-width="2"/>
+          <line x1="155" y1="318" x2="160" y2="389" stroke="#1a1a1a" stroke-width="1.6"/>
+          <line x1="125" y1="356" x2="190" y2="348" stroke="#1a1a1a" stroke-width="1.6"/>
+          <!-- 얼굴 -->
+          <circle cx="262" cy="306" r="8.5" fill="#fff" stroke="#1a1a1a" stroke-width="1.8"/>
+          <circle cx="262" cy="306" r="2.8" fill="#1a1a1a"/>
+          <circle cx="293" cy="297" r="8.5" fill="#fff" stroke="#1a1a1a" stroke-width="1.8"/>
+          <circle cx="293" cy="297" r="2.8" fill="#1a1a1a"/>
+          <ellipse cx="277" cy="324" rx="6" ry="7" fill="#e8503a" stroke="#1a1a1a" stroke-width="1.3"/>
+          <path d="M268 341 Q278 350 289 338" fill="none" stroke="#1a1a1a" stroke-width="1.8" stroke-linecap="round"/>
+        </g>
+      </svg>
+    </div>
+  </div>
+
+  <div class="hero-title reveal on">
+    <h1>밍뇽옹의 홈스윗홈</h1>
+    <p>이제 정리가 되어 초대합니다.</p>
+    <div class="hero-date">2026.06.14 SAT 12:00PM</div>
+  </div>
+
+  <div class="scroll-hint">▼</div>
+</section>
+
+<!-- ================= INVITATION ================= -->
+<section>
+  <div class="wrap">
+    <div class="label reveal">INVITATION</div>
+    <p class="body-text reveal">
+      신혼 2개월차!<br/>
+      청량한 정원뷰와 함께하는<br/>
+      밍이의 뉴 홈에 초대해요.<br/><br/>
+      결혼식 이후 오랜만에 만나는 여러분과<br/>
+      맛난 식사와 즐거운 담소를 나누고파요.
+    </p>
+  </div>
+</section>
+
+<div class="doodle reveal">
+  <svg viewBox="0 0 60 50" xmlns="http://www.w3.org/2000/svg" style="width:44px">
+    <line x1="14" y1="24" x2="20" y2="46" stroke="#1a1a1a" stroke-width="1.1"/>
+    <line x1="30" y1="28" x2="29" y2="46" stroke="#1a1a1a" stroke-width="1.1"/>
+    <line x1="45" y1="24" x2="38" y2="46" stroke="#1a1a1a" stroke-width="1.1"/>
+    <ellipse cx="14" cy="14" rx="8" ry="10" fill="#56b7e6" stroke="#1a1a1a" stroke-width="1.4"/>
+    <ellipse cx="31" cy="17" rx="8" ry="10" fill="#ffd166" stroke="#1a1a1a" stroke-width="1.4"/>
+    <ellipse cx="46" cy="13" rx="8" ry="10" fill="#f2615c" stroke="#1a1a1a" stroke-width="1.4"/>
+  </svg>
+</div>
+
+<!-- ================= MENU ================= -->
+<section>
+  <div class="wrap">
+    <div class="label reveal">MENU</div>
+
+    <div class="reveal">
+      <div class="sub-label">MAIN COURSE</div>
+      <p class="menu-item">냉우동 · 초밥 · 연어깍두기</p>
+    </div>
+
+    <div class="reveal">
+      <div class="sub-label">DESSERT</div>
+      <p class="menu-item">레몬포셋 · 바나나푸딩</p>
+    </div>
+
+    <div class="reveal">
+      <div class="sub-label">DRINK</div>
+      <p class="menu-item">드립커피 · 팔레데떼 · 마리아쥬 플레르</p>
+      <p class="menu-note">中 선택 가능</p>
+    </div>
+  </div>
+</section>
+
+<div class="doodle reveal">
+  <svg viewBox="0 0 100 64" xmlns="http://www.w3.org/2000/svg" style="width:46px">
+    <path d="M20 56 Q4 56 8 42 Q0 30 15 26 Q17 10 36 15 Q46 2 60 11 Q78 6 80 24 Q96 28 90 44 Q96 56 78 56 Z" fill="#dcf1b4" stroke="#1a1a1a" stroke-width="2"/>
+  </svg>
+</div>
+
+<!-- ================= GUESTS ================= -->
+<section>
+  <div class="wrap">
+    <div class="label reveal">GUESTS</div>
+    <div class="guest-list reveal">
+      <span class="guest">염혜민</span>
+      <span class="guest">염태오</span>
+      <span class="guest">김민성</span>
+      <span class="guest">정서우</span>
+    </div>
+  </div>
+</section>
+
+<div class="doodle reveal">
+  <svg viewBox="0 0 34 46" xmlns="http://www.w3.org/2000/svg">
+    <line x1="17" y1="26" x2="18" y2="44" stroke="#1a1a1a" stroke-width="1.1"/>
+    <ellipse cx="17" cy="15" rx="9" ry="12" fill="#f7a8c4" stroke="#1a1a1a" stroke-width="1.4"/>
+  </svg>
+</div>
+
+<!-- ================= LOCATION ================= -->
+<section>
+  <div class="wrap">
+    <div class="label reveal">LOCATION</div>
+    <div class="reveal">
+      <div class="place-name">서울대입구 아이원 아파트<br/>104동 203호</div>
+      <p class="addr">서울시 관악구 청룡길 78</p>
+      <a class="map-btn" target="_blank" rel="noopener"
+         href="https://map.naver.com/p/search/%EC%84%9C%EC%9A%B8%EC%8B%9C%20%EA%B4%80%EC%95%85%EA%B5%AC%20%EC%B2%AD%EB%A3%A1%EA%B8%B8%2078">
+        <span class="pin">N</span> 네이버 지도 열기
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ================= PICK UP ================= -->
+<section style="padding-top:30px">
+  <div class="wrap">
+    <div class="label reveal">PICK UP LOCATION</div>
+    <div class="reveal">
+      <div class="pickup-box">
+        서울대입구역 4번출구<br/>스타벅스 앞에서 만나요
+        <div class="pickup-time">12:00PM</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="reveal">
+  <div class="mini-house">
+    <svg viewBox="0 0 60 56" xmlns="http://www.w3.org/2000/svg">
+      <path d="M8 24 L30 8 L52 24 L46 26 L14 26 Z" fill="#1a1a1a"/>
+      <rect x="14" y="26" width="32" height="24" fill="#fff" stroke="#1a1a1a" stroke-width="1.5"/>
+      <rect x="22" y="32" width="12" height="11" fill="#f9b9cb" stroke="#1a1a1a" stroke-width="1.2"/>
+    </svg>
+  </div>
+  SEE YOU SOON 🤍
+</footer>
+
+<script>
+  // 섹션 스크롤 리빌
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach((e) => {
+      if (e.isIntersecting) {
+        e.target.classList.add('on');
+        io.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.18 });
+  document.querySelectorAll('.reveal').forEach((el) => io.observe(el));
+
+  // 히어로 패럴랙스: 구름은 제각각의 속도로, 집은 살짝 느리게 따라옴
+  const clouds = document.querySelectorAll('.cloud');
+  const houseWrap = document.getElementById('houseWrap');
+  let ticking = false;
+
+  function onScroll() {
+    if (ticking) return;
+    ticking = true;
+    requestAnimationFrame(() => {
+      const y = window.scrollY;
+      clouds.forEach((c) => {
+        const s = parseFloat(c.dataset.speed || 0.2);
+        c.style.translate = `0 ${y * s}px`;
+      });
+      houseWrap.style.translate = `0 ${y * 0.12}px`;
+      ticking = false;
+    });
+  }
+  window.addEventListener('scroll', onScroll, { passive: true });
+</script>
+
+</body>
+</html>
