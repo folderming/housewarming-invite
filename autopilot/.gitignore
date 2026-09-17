@@ -1,3 +1,5 @@
+__pycache__/
+*.py[cod]
 out/tracks/
 out/*.mp3
 out/*.mp4
