@@ -15,7 +15,6 @@ from pathlib import Path
 
 from core import state
 from fashion import captions, concepts as fconcepts, prompts
-from playlist import concepts as pconcepts
 
 OUT = Path(__file__).resolve().parent / "out"
 
@@ -69,64 +68,16 @@ def fashion_brief(month: int, images: int, videos: int) -> dict:
     return brief
 
 
-def playlist_brief() -> dict:
-    concept = state.pick("playlist", pconcepts.all_concepts())
-    track_seconds = 180
-    n_tracks = 8  # 8트랙을 섞어 2시간을 채운다. 트랙이 적으면 반복이 귀에 잡힌다.
-
-    brief = {
-        "track": "playlist",
-        "date": date.today().isoformat(),
-        "concept": {
-            "slug": concept.slug,
-            "title": concept.title,
-            "minutes": concept.minutes,
-        },
-        "generate": {
-            "cover": {
-                "model": "nano_banana_pro",
-                "aspect_ratio": "16:9",
-                "prompt": concept.cover_prompt,
-                "est_credits": 0.5,
-            },
-            "music": {
-                "via": "외부 API (config/music_providers.json)",
-                "prompt": concept.music_prompt,
-                "tracks": n_tracks,
-                "seconds_each": track_seconds,
-                "note": "playlist.music.generate_track() 로 out/tracks/ 에 저장한 뒤 "
-                        "playlist.assemble.build() 로 합칠 것.",
-            },
-        },
-        "youtube": {
-            "title": concept.title,
-            "description": (
-                f"{concept.scene['ko']}에 어울리는 {concept.sound['ko']} 플레이리스트입니다.\n"
-                f"{concept.minutes}분 연속 재생.\n\n"
-                "※ 본 영상의 음원은 AI로 생성되었으며 채널이 사용 권리를 보유합니다.\n\n"
-                "[타임스탬프]\n(조립 후 tracklist.json 내용으로 대체)"
-            ),
-            "tags": ["플레이리스트", "playlist", concept.sound["ko"], "공부할때듣는음악", "감성플리"],
-        },
-    }
-    state.log_run("playlist", {"slug": concept.slug, "title": concept.title})
-    return brief
-
-
 def main() -> None:
     ap = argparse.ArgumentParser(description="새벽 자동 생성 작업 지시서를 만든다")
-    ap.add_argument("track", choices=["fashion", "playlist", "both"])
+    ap.add_argument("track", choices=["fashion"], nargs="?", default="fashion")
     ap.add_argument("--month", type=int, default=date.today().month)
     ap.add_argument("--images", type=int, default=6)
     ap.add_argument("--videos", type=int, default=3)
     args = ap.parse_args()
 
     OUT.mkdir(parents=True, exist_ok=True)
-    briefs = []
-    if args.track in ("fashion", "both"):
-        briefs.append(fashion_brief(args.month, args.images, args.videos))
-    if args.track in ("playlist", "both"):
-        briefs.append(playlist_brief())
+    briefs = [fashion_brief(args.month, args.images, args.videos)]
 
     for b in briefs:
         path = OUT / f"{b['date']}-{b['track']}.brief.json"

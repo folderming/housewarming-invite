@@ -5,7 +5,8 @@
       "campus__body_curvy__budget_50k": "2026-09-17",
       "transition__body_curvy__five_min": "2026-09-17",
       "transition__body_curvy__budget_50k": "2026-09-17",
-      "transition__body_short_leg__all_season": "2026-09-17"
+      "transition__body_short_leg__all_season": "2026-09-17",
+      "commute__body_broad__all_season": "2026-09-17"
     }
   },
   "runs": [
@@ -38,6 +39,12 @@
       "date": "2026-09-17",
       "slug": "transition__body_short_leg__all_season",
       "title": "숏다리 보완 간절기룩, 가을부터 겨울까지"
+    },
+    {
+      "track": "fashion",
+      "date": "2026-09-17",
+      "slug": "commute__body_broad__all_season",
+      "title": "어깨 넓은 체형 출근룩, 가을부터 겨울까지"
     }
   ]
 }
