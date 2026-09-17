@@ -4,7 +4,8 @@
       "travel__body_broad__single_item": "2026-09-17",
       "campus__body_curvy__budget_50k": "2026-09-17",
       "transition__body_curvy__five_min": "2026-09-17",
-      "transition__body_curvy__budget_50k": "2026-09-17"
+      "transition__body_curvy__budget_50k": "2026-09-17",
+      "transition__body_short_leg__all_season": "2026-09-17"
     }
   },
   "runs": [
@@ -31,6 +32,12 @@
       "date": "2026-09-17",
       "slug": "transition__body_curvy__budget_50k",
       "title": "통통한 체형 간절기룩, 5만원 한 장으로"
+    },
+    {
+      "track": "fashion",
+      "date": "2026-09-17",
+      "slug": "transition__body_short_leg__all_season",
+      "title": "숏다리 보완 간절기룩, 가을부터 겨울까지"
     }
   ]
 }
