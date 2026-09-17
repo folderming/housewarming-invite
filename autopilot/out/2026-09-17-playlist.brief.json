@@ -1,0 +1,35 @@
+{
+  "track": "playlist",
+  "date": "2026-09-17",
+  "concept": {
+    "slug": "first_snow__bossa__180",
+    "title": "[Playlist] 첫눈 오는 날 창가에 듣는 보사노바 | 180분",
+    "minutes": 180
+  },
+  "generate": {
+    "cover": {
+      "model": "nano_banana_pro",
+      "aspect_ratio": "16:9",
+      "prompt": "첫눈 오는 날 창가 장면의 일러스트레이션. 무드: 설레고 조용한. 잔잔한 애니메이션 배경화 스타일, 한 명의 뒷모습 또는 무인 풍경, 따뜻한 색온도와 부드러운 그레인, 텍스트 없음, 로고 없음. 16:9 와이드 구도.",
+      "est_credits": 0.5
+    },
+    "music": {
+      "via": "외부 API (config/music_providers.json)",
+      "prompt": "bossa nova instrumental, nylon guitar, light shaker, warm and unhurried, no vocals, mood: 설레고 조용한, consistent tempo, seamless loopable",
+      "tracks": 8,
+      "seconds_each": 180,
+      "note": "playlist.music.generate_track() 로 out/tracks/ 에 저장한 뒤 playlist.assemble.build() 로 합칠 것."
+    }
+  },
+  "youtube": {
+    "title": "[Playlist] 첫눈 오는 날 창가에 듣는 보사노바 | 180분",
+    "description": "첫눈 오는 날 창가에 어울리는 보사노바 플레이리스트입니다.\n180분 연속 재생.\n\n※ 본 영상의 음원은 AI로 생성되었으며 채널이 사용 권리를 보유합니다.\n\n[타임스탬프]\n(조립 후 tracklist.json 내용으로 대체)",
+    "tags": [
+      "플레이리스트",
+      "playlist",
+      "보사노바",
+      "공부할때듣는음악",
+      "감성플리"
+    ]
+  }
+}

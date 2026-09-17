@@ -1,0 +1,29 @@
+{
+  "_comment": "제휴 슬롯. 가입 전에는 enabled=false로 두고 링크 자리만 비워 둔다. 가입 후 키만 꽂으면 파이프라인이 그대로 돈다.",
+  "disclosure": {
+    "ko_short": "이 게시물은 제휴 활동의 일환으로 수수료를 제공받을 수 있습니다.",
+    "ko_coupang": "이 게시물은 쿠팡 파트너스 활동의 일환으로 수수료를 제공받습니다.",
+    "ai_notice": "AI로 생성한 스타일링 이미지입니다. 실제 상품과 착용감·색상이 다를 수 있습니다.",
+    "required": true,
+    "placement": "캡션 최상단 1줄 + 영상 내 자막 1회"
+  },
+  "programs": {
+    "coupang_partners": {
+      "enabled": false,
+      "status": "미가입",
+      "access_key_env": "COUPANG_ACCESS_KEY",
+      "secret_key_env": "COUPANG_SECRET_KEY",
+      "notes": "가입 후 딥링크 API 사용. 상품 이미지는 파트너스가 제공한 원본만 비변형으로 사용할 것."
+    },
+    "youtube_shopping": {
+      "enabled": false,
+      "status": "미연동",
+      "notes": "지그재그 등이 참여. 영상에 상품 태그가 직접 붙어 CPS 전환율이 가장 높은 경로."
+    },
+    "linkprice": {
+      "enabled": false,
+      "status": "미가입",
+      "notes": "무신사/29CM 등 패션 머천트 다수 입점한 CPA/CPS 네트워크."
+    }
+  }
+}

@@ -1,0 +1,57 @@
+{
+  "used": {
+    "fashion": {
+      "travel__body_broad__single_item": "2026-09-17",
+      "campus__body_curvy__budget_50k": "2026-09-17",
+      "transition__body_curvy__five_min": "2026-09-17",
+      "transition__body_curvy__budget_50k": "2026-09-17",
+      "transition__body_short_leg__all_season": "2026-09-17",
+      "commute__body_broad__all_season": "2026-09-17",
+      "transition__body_slim__all_season": "2026-09-17"
+    }
+  },
+  "runs": [
+    {
+      "track": "fashion",
+      "date": "2026-09-17",
+      "slug": "travel__body_broad__single_item",
+      "title": "어깨 넓은 체형 여행룩, 딱 한 개만 사면 되는"
+    },
+    {
+      "track": "fashion",
+      "date": "2026-09-17",
+      "slug": "campus__body_curvy__budget_50k",
+      "title": "통통한 체형 캠퍼스룩, 5만원 한 장으로"
+    },
+    {
+      "track": "fashion",
+      "date": "2026-09-17",
+      "slug": "transition__body_curvy__five_min",
+      "title": "통통한 체형 간절기룩, 5분 만에 입고 나가는"
+    },
+    {
+      "track": "fashion",
+      "date": "2026-09-17",
+      "slug": "transition__body_curvy__budget_50k",
+      "title": "통통한 체형 간절기룩, 5만원 한 장으로"
+    },
+    {
+      "track": "fashion",
+      "date": "2026-09-17",
+      "slug": "transition__body_short_leg__all_season",
+      "title": "숏다리 보완 간절기룩, 가을부터 겨울까지"
+    },
+    {
+      "track": "fashion",
+      "date": "2026-09-17",
+      "slug": "commute__body_broad__all_season",
+      "title": "어깨 넓은 체형 출근룩, 가을부터 겨울까지"
+    },
+    {
+      "track": "fashion",
+      "date": "2026-09-17",
+      "slug": "transition__body_slim__all_season",
+      "title": "마른 체형 간절기룩, 가을부터 겨울까지"
+    }
+  ]
+}

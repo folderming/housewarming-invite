@@ -1,0 +1,48 @@
+name: 쓰레드 게시
+
+# 이 저장소의 개발 환경에서는 graph.threads.net 이 막혀 있어 글을 올릴 수 없다.
+# Actions 러너는 외부망이 열려 있으므로 실제 게시는 여기서 한다.
+
+on:
+  workflow_dispatch:
+  schedule:
+    # 09:00, 13:00, 20:00 KST (UTC 기준 00, 04, 11시)
+    - cron: "0 0,4,11 * * *"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: threads-post
+  cancel-in-progress: false
+
+jobs:
+  post:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - run: pip install -q requests
+
+      - name: 대기열 게시
+        env:
+          THREADS_USER_ID: ${{ secrets.THREADS_USER_ID }}
+          THREADS_ACCESS_TOKEN: ${{ secrets.THREADS_ACCESS_TOKEN }}
+        working-directory: autopilot/toss
+        run: python3 run_queue.py
+
+      - name: 결과 커밋
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          if [ -n "$(git status --porcelain autopilot/out)" ]; then
+            git add autopilot/out
+            git commit -m "쓰레드 게시 결과 반영 [skip ci]"
+            git push
+          else
+            echo "변경 없음."
+          fi
