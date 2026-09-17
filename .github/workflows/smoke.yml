@@ -1,0 +1,50 @@
+name: autopilot 스모크 테스트
+
+on:
+  pull_request:
+    paths: ["autopilot/**", ".github/workflows/**"]
+  push:
+    branches: [main]
+    paths: ["autopilot/**"]
+
+jobs:
+  smoke:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - run: pip install -q -r autopilot/requirements.txt
+
+      - name: 컨셉 생성과 지시서가 깨지지 않았는지
+        working-directory: autopilot
+        run: |
+          python3 cli.py
+          test -f out/$(date +%Y-%m-%d)-fashion.brief.json
+
+      - name: 토스 글 생성기가 도는지
+        working-directory: autopilot
+        run: |
+          python3 -c "
+          from toss.deal import Deal
+          from toss.posts import build_all
+          r = build_all(Deal(name='테스트', price=1000, url='https://toss.im/sharelink/x'))
+          assert r['ok'], r
+          assert '쉐어링크로 수익이 발생할 수 있어요.' in r['threads'], '광고 표시 누락'
+          assert '[쉐어링크 · 수익 발생 가능]' in r['openchat'], '광고 표시 누락'
+          print('통과')
+          "
+
+      - name: 잘못된 딜이 걸러지는지
+        working-directory: autopilot
+        run: |
+          python3 -c "
+          from toss.deal import Deal
+          from toss.posts import build_all
+          r = build_all(Deal(name='x', price=5000, list_price=3000, url='https://toss.im/x'))
+          assert not r['ok'], '정가가 더 낮은데 통과됨'
+          r2 = build_all(Deal(name='x', price=1000, url='https://example.com/x'))
+          assert not r2['ok'], '토스 링크가 아닌데 통과됨'
+          print('통과')
+          "
