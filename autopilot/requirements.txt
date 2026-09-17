@@ -1,0 +1,4 @@
+# 2시간 플레이리스트 스티칭용 ffmpeg 바이너리 (시스템 설치 불필요)
+imageio-ffmpeg>=0.4.9
+# 음악 API 어댑터 / 제휴 API 호출용
+requests>=2.31.0

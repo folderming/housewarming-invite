@@ -1,0 +1,35 @@
+{
+  "tiktok": {
+    "enabled": true,
+    "aspect": "9:16",
+    "clip_seconds": 8,
+    "clips_per_post": 3,
+    "caption_max": 2200,
+    "link_in": "bio",
+    "publish": "higgsfield MCP tiktok_publish (세션 내장, 코드 불필요)"
+  },
+  "youtube_shorts": {
+    "enabled": true,
+    "aspect": "9:16",
+    "clip_seconds": 8,
+    "clips_per_post": 3,
+    "caption_max": 5000,
+    "link_in": "description + 쇼핑 제휴 태그",
+    "publish": "YouTube Data API v3 (별도 OAuth 필요)"
+  },
+  "instagram": {
+    "enabled": true,
+    "aspect": "4:5",
+    "carousel_images": 6,
+    "caption_max": 2200,
+    "link_in": "bio",
+    "publish": "Instagram Graph API / 비즈니스 계정 필요",
+    "note": "본문 링크 불가 → 캐러셀 이미지 위주가 비용·전환 모두 유리"
+  },
+  "youtube_long": {
+    "enabled": true,
+    "aspect": "16:9",
+    "use": "playlist",
+    "publish": "YouTube Data API v3"
+  }
+}
